@@ -1,4 +1,4 @@
-# 🐳 Introduction to Docker
+# 🐳 [Introduction to Docker](https://app.datacamp.com/learn/courses/introduction-to-docker)
 
 Docker is a tool used to develop, run, and ship containers. It’s an essential part of every data professional’s toolbelt, helping to create robust, secure, and scalable applications or workflows.
 In this course, you’ll become a Docker pro, gaining hands-on experience using Docker CLI.
