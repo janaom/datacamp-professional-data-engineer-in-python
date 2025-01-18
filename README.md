@@ -1,6 +1,6 @@
 # Career Track: [Professional Data Engineer in Python](https://app.datacamp.com/learn/career-tracks/professional-data-engineer)
 
-Dive deep into advanced skills and state-of-the-art tools revolutionizing data engineering roles today with our Professional Data Engineer track.
+Dive deep into advanced skills and state-of-the-art tools revolutionizing data engineering roles today with DataCamp Professional Data Engineer track.
 
 --------------------------
 
