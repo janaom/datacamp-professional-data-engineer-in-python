@@ -2,6 +2,8 @@
 
 Dive deep into advanced skills and state-of-the-art tools revolutionizing data engineering roles today with DataCamp Professional Data Engineer track.
 
+📌 Learning is in progress, for now working on Docker course
+
 --------------------------
 
 ✅ [Understanding Modern Data Architecture](https://app.datacamp.com/learn/courses/understanding-modern-data-architecture)
