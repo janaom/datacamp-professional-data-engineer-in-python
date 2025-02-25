@@ -106,3 +106,13 @@ You're working on a project of your own and have quite a few containers running 
 
 ![image](https://github.com/user-attachments/assets/a32493f8-6c58-4c44-b1ba-0eaf805dbb55)
 
+## Exercise
+
+Cleaning up containers
+
+You were able to find the issue with your colleague's container and help him fix it. Before you return to your project, you want to clean up the container you just started to help your colleague.
+
+    Using the terminal, enter the command to stop the colleague_project container.
+
+    Now that the container is stopped use the terminal to remove the container.
+
