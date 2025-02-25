@@ -45,3 +45,22 @@ The docker ps command allows us to see any running containers. The first column 
 
 ![image](https://github.com/user-attachments/assets/fa0fcd00-327b-4bcb-8ef3-e95ad543e54f)
 
+
+## Exercise
+
+An interactive container
+
+Another bug has popped up in the data ingestion pipeline; this time, however, you got some pointers on where the issue might be. Your colleagues tell you the application cannot start inside its Ubuntu container. To debug the issue you want to start an Ubuntu container and try to run the application yourself to find out what's going wrong.
+
+Select the right combination of commands to:
+
+    Run an ubuntu container and get an interactive shell inside of the container.
+    Close the container to go back to the host after you got an interactive shell in the container and found the issue with the pipeline.
+
+You can use the shell to try out the possible commands.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/80e6251b-4b90-4072-a6ac-9494720a8f2f)
+
+
