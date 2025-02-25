@@ -87,4 +87,22 @@ Previously, we learned how to stop containers. However, a stopped container is n
 
 ![image](https://github.com/user-attachments/assets/551498c1-6ea6-4d5d-9db0-14ae0d3336f5)
 
+## Exercise
+
+Helping a colleague
+
+You're working on a project of your own and have quite a few containers running when your colleague asks you to debug an issue he's having. You've got some time to help your colleague, but you want to make sure you can find his container among all the ones you already have running.
+
+
+    Using the terminal, enter the command to run the my_project image detached from your shell while giving it the colleague_project name.
+    To run an image in detached mode use the -d flag, without using this flag the image will run connected to your shell making it unusable. If this happens you can refresh the page.
+
+    The container should be running now. Make sure it is by filtering the running containers using the name colleague_project you gave the container.
+
+    Now that you're sure the container is running look at the logs using the container's name, colleague_project.
+
+
+
+
+![image](https://github.com/user-attachments/assets/a32493f8-6c58-4c44-b1ba-0eaf805dbb55)
 
