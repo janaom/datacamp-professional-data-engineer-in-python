@@ -102,7 +102,7 @@ You're working on a project of your own and have quite a few containers running 
     Now that you're sure the container is running look at the logs using the container's name, colleague_project.
 
 
-
+## Solution
 
 ![image](https://github.com/user-attachments/assets/a32493f8-6c58-4c44-b1ba-0eaf805dbb55)
 
@@ -116,3 +116,6 @@ You were able to find the issue with your colleague's container and help him fix
 
     Now that the container is stopped use the terminal to remove the container.
 
+## Solution
+
+![image](https://github.com/user-attachments/assets/eb25e5f3-75f8-47c8-9c39-4f751e82aef8)
