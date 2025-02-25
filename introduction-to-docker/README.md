@@ -63,4 +63,28 @@ You can use the shell to try out the possible commands.
 
 ![image](https://github.com/user-attachments/assets/80e6251b-4b90-4072-a6ac-9494720a8f2f)
 
+# Working with Docker containers
+
+When there are only a few containers, it's easy to find them in the list that docker ps returns. However, if you're working with lots of containers, it can quickly become challenging to identify the right one.  To solve this, the docker run command has a name flag that allows us to name a container. The name then shows up in the last column of the docker ps output. 
+
+![image](https://github.com/user-attachments/assets/66bbab16-5ff6-4c06-bba8-65474dd0070d)
+
+When using docker ps with so many containers that even naming them doesn't allow us to find them. We can use docker ps with the f, for filter flag to find a specific container. This will show you only the details of containers with the name you specified in the filter. 
+
+![image](https://github.com/user-attachments/assets/e2213411-caaa-4320-927d-3683ad92d5cc)
+
+Now that we know how to find our running containers, it will also be useful to see their output, for example, to debug any issues. To look at the output a container has generated, we can use the docker logs command followed by the container id. Most containers quickly generate a lot of output, so you will often have to scroll through the result of docker logs to find what you're looking for. 
+
+![image](https://github.com/user-attachments/assets/f100c453-421d-4f69-bae2-e77c3eb671ab)
+
+If instead, you want to follow the logs your container is generating in real-time, you can use docker logs together with the f, for follow, flag. You will see any logs the container generates live. Even though docker ps also has a f flag, the docker ps flag allows us to filter. When working with docker logs instead, the f flag has another effect, allowing us to follow a container its logs. After using docker logs, you will see the output of a running container until either the end of the logs or until you press control plus c to exit the log view. 
+
+![image](https://github.com/user-attachments/assets/ec07f94c-f1c8-474d-a22c-ab0827459b86)
+
+Previously, we learned how to stop containers. However, a stopped container is not fully gone; the stopped container still exists and is occupying some space on our hard drive. To fully remove an already stopped container, for example, because we want to reuse its name, we use docker container rm followed by the container-id to remove the container. 
+
+![image](https://github.com/user-attachments/assets/e08896b4-a335-4f6f-a3ff-b24cc35e97f1)
+
+![image](https://github.com/user-attachments/assets/551498c1-6ea6-4d5d-9db0-14ae0d3336f5)
+
 
