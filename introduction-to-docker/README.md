@@ -230,3 +230,23 @@ Your company is developing a new spam filter method. You think you've found a go
 
 ![image](https://github.com/user-attachments/assets/3aa1cf87-415f-4cb2-9755-b9897091777d)
 
+
+## Exercise
+
+Saving an image to a file
+
+After you pushed your image to the company's registry, you got a lot of feedback from your colleagues. You addressed the most important feedback and would like to share your new Docker image, spam:v2, with just a few colleagues before you share it with the entire company again. Save your new Docker image to a file called spam_updated.tar so you can email it to your colleagues Alice and Bob.
+
+    Using the terminal, enter the command to save spam:v2 to a file called spam_updated.tar.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/769ebe28-7f56-4e5f-96c0-64ef96587dc2)
+
+
+## Exercise
+
+Receiving Docker Images
+
+Your company is still working on that new spam filter! Your colleague Bob made possible improvements to your work and sent you a tar file. Another colleague, Alice, has pushed her version to the company's dockerhub, docker.mycompany.com. It's now up to you to run both containers and find out which runs fastest.
+
