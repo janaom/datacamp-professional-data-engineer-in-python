@@ -250,3 +250,15 @@ Receiving Docker Images
 
 Your company is still working on that new spam filter! Your colleague Bob made possible improvements to your work and sent you a tar file. Another colleague, Alice, has pushed her version to the company's dockerhub, docker.mycompany.com. It's now up to you to run both containers and find out which runs fastest.
 
+    Using the terminal, enter the command to pull the container your colleague Alice made, spam_alice:v3, from the company's Docker Hub registry, docker.mycompany.com.
+
+    Run the container you just pulled, docker.mycompany.com/spam_alice:v3, to see how good its spam detection algorithm is.
+
+    Using the terminal, enter the command to open the tar file your colleague Bob sent you, spam_bob.tar.
+
+    Just like you did for Alice's container, run Bob's container, spam_bob:v3, to see how good its spam detection algorithm is.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/d9c96888-4974-41c8-92f2-c2bbff4fd251)
+
