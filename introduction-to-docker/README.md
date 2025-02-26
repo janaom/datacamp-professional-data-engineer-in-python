@@ -11,7 +11,7 @@ As you progress, you’ll learn how to create and manage Docker containers using
 
 ✅ [Using Docker Containers](https://github.com/janaom/datacamp-professional-data-engineer-in-python/blob/main/introduction-to-docker/README.md#using-docker-containers)
 
-✅ Writing Your Own Docker Images
+✅ [Writing Your Own Docker Images](https://github.com/janaom/datacamp-professional-data-engineer-in-python/blob/main/introduction-to-docker/README.md#working-with-docker-containers)
 
 ✅ Creating Secure Docker Images
 
