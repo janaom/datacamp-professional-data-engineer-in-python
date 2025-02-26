@@ -152,3 +152,16 @@ A dangling image is an image that no longer has a name because the name has been
 
 ![image](https://github.com/user-attachments/assets/dd032183-4c79-4cf4-9970-96907de65696)
 
+## Exercise
+
+Pulling a specific tag
+
+You were helping a colleague by looking at an issue they were having with installing some of their tools on the ubuntu image. You couldn't reproduce the issues so far, and just realized you might be trying on a different version of Ubuntu.
+
+    Using the terminal, enter the command to see all images available on your machine.
+
+    Seems like you are not using the same version as your colleague, who is using the 22.04 tag of ubuntu. Pull the right version, 22.04, of the ubuntu image.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/e51a7a0e-ee22-433c-a155-532c5e7520a9)
