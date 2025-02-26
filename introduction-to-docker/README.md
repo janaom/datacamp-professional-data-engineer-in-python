@@ -215,3 +215,18 @@ If, instead of using a Docker registry, we want to send a Docker image to just a
 ![image](https://github.com/user-attachments/assets/bed481f1-4c33-4a66-ab66-a89f0fb90bde)
 
 
+## Exercise
+
+Sharing your work using a Docker registry
+
+Your company is developing a new spam filter method. You think you've found a good method and would like to share your results with your colleague in a way that allows them to verify your results. You've decided that using a Docker image with all your code and datasets is the right approach. You've already created this image on your local machine and called it spam:v1. The next step is to push this image to your company's registry docker.mycompany.com so that your colleagues can build upon your work.
+
+    Using the terminal, enter the command to tag the spam:v1 container so it can be pushed to docker.mycompany.com.
+
+    Using the terminal, enter the command to push the docker.mycompany.com/spam:v1 image to the docker.mycompany.com registry.
+
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/3aa1cf87-415f-4cb2-9755-b9897091777d)
+
