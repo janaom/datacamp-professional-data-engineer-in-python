@@ -119,3 +119,36 @@ You were able to find the issue with your colleague's container and help him fix
 ## Solution
 
 ![image](https://github.com/user-attachments/assets/eb25e5f3-75f8-47c8-9c39-4f751e82aef8)
+
+# Managing local docker images
+
+In practice, images are either custom-made or downloaded from Docker Hub. Docker Hub is a registry of community-made Docker images. In other words, it's a website from which we can download thousands of pre-made images for all kinds of use cases. For any common use-case, we will find an image on Docker Hub. 
+
+Downloading an image from Docker Hub is called pulling an image.
+
+![image](https://github.com/user-attachments/assets/5736ce31-e073-40cb-830b-ffec61a2b832)
+
+![image](https://github.com/user-attachments/assets/6617be62-7edb-4397-a6f4-51bf4abe1554)
+
+Now that we know how to pull images, we need a way to view the images we have available on our machine.
+
+![image](https://github.com/user-attachments/assets/a8434715-4595-4f75-9b2f-d7ed6a9098df)
+
+Docker only has a limited amount of space it can use on our disk. Previously we saw how to remove containers using docker container rm. Similarly, we can use docker image rm to clear space for more containers and images. A container is a running image; a side effect of this is that you can only delete an image once there are no more containers based on it. If we try to delete an image for which we still have a container on our system, we'll get the warning you can see at the bottom of the slide. This error message also includes the container's id based on the image we're trying to remove. We can use the docker container rm command to remove the container, after which we can remove the image.
+
+![image](https://github.com/user-attachments/assets/8cf961dd-14b8-430a-b90e-ecb63a0aeda9)
+
+It's common to have multiple containers based on a single image, which can make it a tedious task to one by one remove all containers before you can remove an image. To more easily clear all stopped containers, we can use docker container prune.
+
+![image](https://github.com/user-attachments/assets/67e10704-1815-4d86-bca6-7e6d1ef477c8)
+
+Then we can use docker image prune dash a to remove all unused images. The a flag, which stands for all, makes it so that unused containers are removed and not only dangling images.
+
+![image](https://github.com/user-attachments/assets/797fe854-70c7-4985-a68f-b7ced28c7edd)
+
+A dangling image is an image that no longer has a name because the name has been re-used for another image. This frequently occurs when creating our own images. For example, if we create an image called testsql, but we find a mistake and change our image slightly, the previous testsql image will then become dangling as our new fixed image now has the testsql name.
+
+![image](https://github.com/user-attachments/assets/45dfd8fb-3e24-45e4-9498-43d96b2380da)
+
+![image](https://github.com/user-attachments/assets/dd032183-4c79-4cf4-9970-96907de65696)
+
