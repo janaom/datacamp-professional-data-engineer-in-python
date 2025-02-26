@@ -19,6 +19,10 @@ As you progress, you’ll learn how to create and manage Docker containers using
 
 # Using Docker Containers
 
+You'll go from starting and stopping your first container to seeing how to clean your environment by removing all containers and images. You'll see how to debug issues by running commands inside a container or executing bash commands in a container interactively. All of this is done using the Docker Command Line Interface.
+
+---------------------------------------
+
 The Docker command line interface or CLI allows us to send instructions to the Docker daemon, which manages containers and images. The basic command is docker. To start a container, we need an image, which acts as a blueprint defining what will be available in the container. For example, the ubuntu image contains the full Ubuntu OS. When we start a container from this image, we get a running instance of Ubuntu that we can interact with via a shell. 
 
 ![image](https://github.com/user-attachments/assets/0365ca6f-b893-40bf-9427-fd96d532e3e5)
@@ -182,3 +186,32 @@ The project you were working on is done. You had to use and try several docker c
 ## Solution
 
 ![image](https://github.com/user-attachments/assets/4725954a-8a51-4d46-a308-92d9509e451f)
+
+
+# Writing Your Own Docker Images
+
+Once you are able to manage images and containers, it's time to know how to share images with colleagues or your entire company and to understand how to create your own. Now, you'll build your own images using Dockerfiles. Dockerfiles are text files that include everything needed for Docker to build an image. You'll learn how to create images and will get an introduction to all the essential Dockerfile instructions like FROM, RUN, COPY, and more. By the end of this chapter, you'll have insight into how Docker makes images and be able to create optimized Docker images from scratch.
+
+----------------------
+
+In the previous lesson, we learned about the official Docker images registry and how we can pull images from it. This is just one way images are distributed. Now, we will learn how to share images with just a few people or a broader community. Either by sending docker images like we would send any other file or using a Docker registry server.
+
+First, we'll have a look at private Docker registry servers. The Docker organization maintains the official Docker images registry. Other Docker registries work the same way but are under the control of another person or group. This means there are no guarantees that the images will work or are safe to use. Images from any registry other than the one from the official Docker organization are easily recognizable because their name starts with the URL of the private Docker registry they come from. 
+
+![image](https://github.com/user-attachments/assets/494f045a-5512-4074-9987-c34eefb8f28e)
+
+Now that we know how to pull images from a custom registry, let's look at how to upload or push an image to a Docker registry. 
+
+![image](https://github.com/user-attachments/assets/90aeecc8-5d4b-47ad-91ca-28817c74e872)
+
+While the Docker official images can be pulled without authentication, anybody creating a private Docker registry can make it private and require authentication. The standard way to secure private Docker registries requires users to log in. We do this with the Docker login command followed by the private registry we want to authenticate for. 
+
+![image](https://github.com/user-attachments/assets/4fe0524b-7cf4-4ac9-81ed-fae42bee6e08)
+
+If, instead of using a Docker registry, we want to send a Docker image to just a few people, it can be easier to send the image as a file. Use the save command to save a Docker image to a file. This will create a minimized file which we can then share like any other file. We can pass the desired filename to the save command using the minus o flag. To load the file, we use the load command, passing the filename using the minus i flag.
+
+![image](https://github.com/user-attachments/assets/f134b2a9-9779-4901-9eab-68a44d9020c9)
+
+![image](https://github.com/user-attachments/assets/bed481f1-4c33-4a66-ab66-a89f0fb90bde)
+
+
