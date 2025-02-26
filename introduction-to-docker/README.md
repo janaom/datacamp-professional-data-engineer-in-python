@@ -164,4 +164,21 @@ You were helping a colleague by looking at an issue they were having with instal
 
 ## Solution
 
-![image](https://github.com/user-attachments/assets/e51a7a0e-ee22-433c-a155-532c5e7520a9)
+![image](https://github.com/user-attachments/assets/259858bf-3038-4f4f-a939-2b60c1ad72e2)
+
+## Exercise
+
+Cleaning up images
+
+The project you were working on is done. You had to use and try several docker containers and images and would like to clear up some space on your system before starting your next project. You remember using the ubuntu image last and know you won't need it for your next project.
+
+    Using the terminal, enter the command to remove the ubuntu image.
+
+    The ubuntu image failed to remove since it still has a container using it. To be sure you can clean up your images, remove all stopped containers.
+
+    Now that all stopped containers are removed, also remove all unused images.
+
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/4725954a-8a51-4d46-a308-92d9509e451f)
