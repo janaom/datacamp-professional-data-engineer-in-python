@@ -262,3 +262,27 @@ Your company is still working on that new spam filter! Your colleague Bob made p
 
 ![image](https://github.com/user-attachments/assets/d9c96888-4974-41c8-92f2-c2bbff4fd251)
 
+Now that we know how to work with docker images and containers, it's time to create our own images.
+Docker images are the recipes or blueprints for Docker containers. To create this blueprint, we must write down a list of instructions in what is called a Dockerfile. A Dockerfile is a text file containing all the commands we would run in the command line to install the software we need, with the addition of some Docker-specific syntax. Conveniently this file should be called Dockerfile for Docker to be able to find it.
+
+![image](https://github.com/user-attachments/assets/950f72a1-79aa-4c91-beea-7cc2968f050e)
+
+Just like when we would follow a recipe, Docker runs the lines in a Dockerfile from top to bottom. The first line in a Dockerfile is always the FROM instruction. This instruction indicates to Docker which image to start from. We can base our images on any other image, Postgres, Ubuntu, another image you made yourself, or even the hello-world image. As with pulling an image, if you want to start from a specific version, you can specify the version right after the image name, separating both with a colon.
+
+![image](https://github.com/user-attachments/assets/d00969e0-7f97-4cb6-9996-4c48f252d51d)
+
+With the FROM instruction, we can create the most basic Dockerfile; we can then create an image from this Dockerfile using the Docker build command. The docker build command is followed by the location of the Dockerfile we want to build. If our Dockerfile is in the current folder, this is simply a dot. When running Docker build, in the last line of the output, we can see the id or hash docker assigns the new image. The hash starts by indicating its type, sha256, in this case. This is followed by the unique hash, which starts with a67f for the example on the slide.
+
+![image](https://github.com/user-attachments/assets/d2b1fbf8-d901-42fd-a7b9-982f4d4e939c)
+
+If we want to give our image a more recognizable name, we can use the t for tag flag followed by the name we want to give our image. If we also want to give a version to our image, we can add a colon and the version after the image name. In both cases we end the docker build command with a dot indicating our Dockerfile is in the current working directory. Once Docker has successfully built our image from our Dockerfile, we can run and use our image just like the images we downloaded from Dockerhub.
+
+![image](https://github.com/user-attachments/assets/73c323ac-396b-4b3f-b26a-cce0cc4cae76)
+
+Now that we can create a very basic image from a Dockerfile, the next step is to start customizing our image. To customize our Dockerfile we will use the RUN instruction. The RUN instruction allows us to run any valid shell command while building an image. To make an image that runs a python data analysis, we start from the ubuntu image, which has Ubuntu installed, by specifying the FROM ubuntu instruction followed by RUN apt-get update. Apt-get is a package manager which enables us to install all kinds of software. The apt-get update command we just added to our Dockerfile will update apt-get so it knows what the most up-to-date version is of all the different software it can install for us. Using another RUN instruction on the following line, we download python using RUN apt-get install python3. Like we can see at the bottom of the slide, some bash commands require user input. While a Docker image is building it is not possible to manually give any input to the bash commands docker runs. Instead we can pass the dash y flag to apt-get install to make sure it doesn't need any input.
+
+![image](https://github.com/user-attachments/assets/95d13ffe-0944-40ac-8f77-421d8b564ad2)
+
+![image](https://github.com/user-attachments/assets/41c4dc36-7782-41ac-a7dd-326171864601)
+
+
