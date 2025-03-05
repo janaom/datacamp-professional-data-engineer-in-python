@@ -285,4 +285,21 @@ Now that we can create a very basic image from a Dockerfile, the next step is to
 
 ![image](https://github.com/user-attachments/assets/41c4dc36-7782-41ac-a7dd-326171864601)
 
+## Exercise
+
+Building your first image
+
+Let's build your first image! We've created a Dockerfile for you, and you can see it in your current working directory using the ls command. You can look at its content using cat Dockerfile or using nano.
+
+    Using the terminal, enter the command to build an image from the Dockerfile in your current working directory.
+
+    Well done! While it's possible to build an image without naming it, we usually want to give our image a name. Using the terminal, enter the command to build an image called my_first_image from the Dockerfile in your current working directory.
+
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/19eeebf6-d773-4be1-b35b-ed3e238e5944)
+
+![image](https://github.com/user-attachments/assets/c5948e2f-d218-4ed1-864f-5c21474d223b)
+
 
