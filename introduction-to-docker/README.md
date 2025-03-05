@@ -352,3 +352,19 @@ Let's get familiar with the RUN instruction. We've created a Dockerfile for you.
 ## Solution
 
 ![image](https://github.com/user-attachments/assets/fd7e4741-632f-4efd-9a06-6e35d3b13ad7)
+
+## Exercise
+
+Creating your own Dockerfile
+
+While it's possible to download images for many use cases, an image might not always meet your exact needs. In that case, you can create a new image based on an existing one that closely matches your requirements. Let's go through the steps to create a Dockerfile from scratch, build on top of an existing Ubuntu image, add your instructions, and then build it into a new image.
+
+    Create a file called Dockerfile in the current working directory.
+    Add the first instruction to the Dockerfile so that it will build on top of the ubuntu image.
+    Add instructions to the Dockerfile so that it runs apt-get update and apt-get install -y python3 when building the Dockerfile.
+    Using the terminal, run the command to build an image called my_python_image from the Dockerfile in your current working directory.
+    
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/c9571276-eaaf-452c-bfd3-28a63052f9ca)
