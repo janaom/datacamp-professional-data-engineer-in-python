@@ -368,3 +368,28 @@ While it's possible to download images for many use cases, an image might not al
 ## Solution
 
 ![image](https://github.com/user-attachments/assets/c9571276-eaaf-452c-bfd3-28a63052f9ca)
+
+The RUN instruction allowed us to execute bash commands to create an image, but we can't use it to move files from our local file system onto the image we're building. To copy local files to our image we use the COPY instruction. The COPY instruction needs two parameters: first, we pass to it the path of the file we want to copy, including the name of the file we want to copy. The second parameter is the destination path inside the image. We can choose whether to end the destination path with a filename. If we do not pass a filename, the file will get its original name.
+
+![image](https://github.com/user-attachments/assets/277bbc62-4f84-445c-94c8-2eb0062e3c3e)
+
+If we don't specify a filename in the source path, then instead of just a single file, the entire contents of the folder will be copied, including sub-folders. For example, if we have a folder called pipeline underscore v3 with two files and a sub-folder with one file, we can copy both files and the subfolder with its file using the COPY instruction ending in pipeline v3 slash.
+
+![image](https://github.com/user-attachments/assets/f0316414-d8dd-4115-8e5e-92d8cd857dc3)
+
+It is not possible to copy files from a parent directory when building a Dockerfile. For example, let's say we are in the projects folder when we run docker build. A COPY instruction in the Dockerfile that tries to copy the init dot py file from the parent directory of the current directory into the image will fail with the not found message we can see on the slide.
+
+![image](https://github.com/user-attachments/assets/b1592357-4019-4b33-b990-4a442f6925d0)
+
+Another common way to include files in an image is to download them during the image build. While there is an instruction that allows us to do this, the ADD instruction, best practice is to use several RUN instructions and bash commands to download and unzip files. First, use curl to download a file to a local directory. Then unzip it using the unzip command if it is an archive. Finally, once we don't need the zip file anymore, we can remove it with the rm command.
+
+![image](https://github.com/user-attachments/assets/8f04d14d-e430-4ae8-8564-2e19cdd58835)
+
+Any instruction in a Dockerfile that downloads files will add to the size of the image. Even if the files are removed in a later instruction. To ensure images don't become unnecessarily big, we should download, unzip and remove the original file in a single RUN instruction. This can be done by chaining the commands using a backslash and double ampersand. The backslash makes it so bash commands can span multiple lines allowing us to keep our Dockerfile readable. The double ampersand tells the shell to execute the commands one after the other. Combining them allows us to create a single RUN instruction that is still easy to read over multiple lines. By using this best practice on downloading and unpacking archives, we ensure our image is as small as possible, making it easier to share and faster to run.
+
+![image](https://github.com/user-attachments/assets/724ee8be-4723-4bcc-8dad-4f01a4c59181)
+
+![image](https://github.com/user-attachments/assets/acec1940-6bdc-4bea-94a9-d89ec3722645)
+
+
+
