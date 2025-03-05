@@ -302,4 +302,40 @@ Let's build your first image! We've created a Dockerfile for you, and you can se
 
 ![image](https://github.com/user-attachments/assets/c5948e2f-d218-4ed1-864f-5c21474d223b)
 
+## Exercise
 
+Working in the command-line
+
+A Dockerfile is just a textfile and creating or editing it can be done using any text editor. However since the default way to work with Docker is through the Command Line Interface, it's convenient to also edit Dockerfiles using the command line. Let's refresh our memory on how to navigate the file system and create or edit a Dockerfile with the command line.
+
+    Create a file called Dockerfile in the current working directory.
+
+        Use touch Dockerfile; the touch command will create an empty file for you.
+        Or use nano Dockerfile, which will create an empty file but also open the nano text editor, which you then have to save using CTRL+s after which you can exit with CTRL+x.
+
+    Now that you've created a new file let's add a line of text to it.
+
+        Open the file using nano Dockerfile.        
+        add FROM ubuntu to the start of the file.        
+        Use CTRL+s to save your changes.
+        Followed by CTRL+x to exit nano.
+
+    Using nano to edit a file is often the most intuitive way; however, you can also use echo combined with a double pipe (>>) to append to files without opening them. Let's use echo to append RUN apt-get update to our Dockerfile.
+
+        Type the first part of the command, echo "RUN apt-get update" which will print the text between the quotes, don't press enter yet.
+        Then add the double pipe >>, which will redirect the output.
+        Followed by Dockerfile to make the output of echo append to the Dockerfile.
+        Now execute the command by pressing the enter key.
+
+
+    Well done! You successfully created and made changes to a file. Often while working in the shell, you want to quickly check the contents of a file without making changes to it. This is easily done using the cat command.
+
+        Check the contents of the Dockerfile using the cat command, cat expects a filename as its first and only argument.
+
+## Solution
+
+```bash
+$ cat Dockerfile
+FROM ubuntu
+RUN apt-ger update
+```
