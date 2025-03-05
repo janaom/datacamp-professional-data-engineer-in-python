@@ -339,3 +339,16 @@ $ cat Dockerfile
 FROM ubuntu
 RUN apt-ger update
 ```
+
+## Exercise
+
+Editing a Dockerfile
+
+Let's get familiar with the RUN instruction. We've created a Dockerfile for you. You can look at its content using cat Dockerfile or using nano. Like before, the Dockerfile already has a FROM instruction, but you'll be adding a RUN command this time.
+
+    Add the correct instruction to the end of the Dockerfile so that the mkdir my_app shell command is run when building the Dockerfile.
+    Using the terminal, run the command to build an image called my_app from the Dockerfile in your current working directory.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/fd7e4741-632f-4efd-9a06-6e35d3b13ad7)
