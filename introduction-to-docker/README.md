@@ -422,3 +422,20 @@ RUN curl https://assets.datacamp.com/production/repositories/6082/datasets/31a50
 RUN unzip /pipeline_final.zip
 RUN rm /pipeline_final.zip
 ```
+
+Docker images have this flexibility; using the CMD instruction we can choose any shell command to execute when a container is started from the image.
+
+Like everything else we add to images, we can add a start command using an instruction in the Dockerfile. This instruction is CMD. CMD accepts a single parameter, the shell command to run when the image starts. The shell command runs when somebody starts a container; it is not executed when using docker build to create an image from the Dockerfile. Adding a CMD instruction to a Dockerfile does not increase the image size and does not add any time to the build. If multiple CMD instructions exist in a single Dockerfile, then only the last one will have any effect.
+
+![image](https://github.com/user-attachments/assets/c549b3cd-8a71-418b-aef1-db216c50c853)
+
+When building an image for a specific use, it makes sense to set the CMD instruction to start an application related to this particular use. This could be starting a python based data analysis or starting software like a database that accepts outside connections. Another typical pattern is to run a script at startup that starts multiple other applications.
+
+![image](https://github.com/user-attachments/assets/6fa11976-a676-4a6d-b356-896b55b13536)
+
+While the CMD instruction sets a default start command for the image, this default start command can be overridden when starting an image using the Docker run command. Just like we pass the image we want to start to Docker run, we can pass a second optional argument, which will override the CMD instruction set in the image. Often when replacing the start command of an image, we will run the image in interactive mode, using the 'dash it' flag. Using a shell as new start command, for example, bash, allows us to look around the image, discover files and see what's installed.
+
+![image](https://github.com/user-attachments/assets/e9934f6d-98cf-4140-a761-631c53a5c05d)
+
+![image](https://github.com/user-attachments/assets/29d01656-7c77-464a-b328-cef0b4521ef2)
+
