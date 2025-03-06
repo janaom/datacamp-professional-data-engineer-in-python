@@ -50,9 +50,7 @@ The docker ps command allows us to see any running containers. The first column 
 ![image](https://github.com/user-attachments/assets/fa0fcd00-327b-4bcb-8ef3-e95ad543e54f)
 
 
-## Exercise
-
-An interactive container
+## Exercise: An interactive container
 
 Another bug has popped up in the data ingestion pipeline; this time, however, you got some pointers on where the issue might be. Your colleagues tell you the application cannot start inside its Ubuntu container. To debug the issue you want to start an Ubuntu container and try to run the application yourself to find out what's going wrong.
 
@@ -91,9 +89,7 @@ Previously, we learned how to stop containers. However, a stopped container is n
 
 ![image](https://github.com/user-attachments/assets/551498c1-6ea6-4d5d-9db0-14ae0d3336f5)
 
-## Exercise
-
-Helping a colleague
+## Exercise: Helping a colleague
 
 You're working on a project of your own and have quite a few containers running when your colleague asks you to debug an issue he's having. You've got some time to help your colleague, but you want to make sure you can find his container among all the ones you already have running.
 
@@ -110,9 +106,7 @@ You're working on a project of your own and have quite a few containers running 
 
 ![image](https://github.com/user-attachments/assets/a32493f8-6c58-4c44-b1ba-0eaf805dbb55)
 
-## Exercise
-
-Cleaning up containers
+## Exercise: Cleaning up containers
 
 You were able to find the issue with your colleague's container and help him fix it. Before you return to your project, you want to clean up the container you just started to help your colleague.
 
@@ -156,9 +150,7 @@ A dangling image is an image that no longer has a name because the name has been
 
 ![image](https://github.com/user-attachments/assets/dd032183-4c79-4cf4-9970-96907de65696)
 
-## Exercise
-
-Pulling a specific tag
+## Exercise: Pulling a specific tag
 
 You were helping a colleague by looking at an issue they were having with installing some of their tools on the ubuntu image. You couldn't reproduce the issues so far, and just realized you might be trying on a different version of Ubuntu.
 
@@ -170,9 +162,7 @@ You were helping a colleague by looking at an issue they were having with instal
 
 ![image](https://github.com/user-attachments/assets/259858bf-3038-4f4f-a939-2b60c1ad72e2)
 
-## Exercise
-
-Cleaning up images
+## Exercise: Cleaning up images
 
 The project you were working on is done. You had to use and try several docker containers and images and would like to clear up some space on your system before starting your next project. You remember using the ubuntu image last and know you won't need it for your next project.
 
@@ -215,9 +205,7 @@ If, instead of using a Docker registry, we want to send a Docker image to just a
 ![image](https://github.com/user-attachments/assets/bed481f1-4c33-4a66-ab66-a89f0fb90bde)
 
 
-## Exercise
-
-Sharing your work using a Docker registry
+## Exercise: Sharing your work using a Docker registry
 
 Your company is developing a new spam filter method. You think you've found a good method and would like to share your results with your colleague in a way that allows them to verify your results. You've decided that using a Docker image with all your code and datasets is the right approach. You've already created this image on your local machine and called it spam:v1. The next step is to push this image to your company's registry docker.mycompany.com so that your colleagues can build upon your work.
 
@@ -231,9 +219,7 @@ Your company is developing a new spam filter method. You think you've found a go
 ![image](https://github.com/user-attachments/assets/3aa1cf87-415f-4cb2-9755-b9897091777d)
 
 
-## Exercise
-
-Saving an image to a file
+## Exercise: Saving an image to a file
 
 After you pushed your image to the company's registry, you got a lot of feedback from your colleagues. You addressed the most important feedback and would like to share your new Docker image, spam:v2, with just a few colleagues before you share it with the entire company again. Save your new Docker image to a file called spam_updated.tar so you can email it to your colleagues Alice and Bob.
 
@@ -244,9 +230,7 @@ After you pushed your image to the company's registry, you got a lot of feedback
 ![image](https://github.com/user-attachments/assets/769ebe28-7f56-4e5f-96c0-64ef96587dc2)
 
 
-## Exercise
-
-Receiving Docker Images
+## Exercise: Receiving Docker Images
 
 Your company is still working on that new spam filter! Your colleague Bob made possible improvements to your work and sent you a tar file. Another colleague, Alice, has pushed her version to the company's dockerhub, docker.mycompany.com. It's now up to you to run both containers and find out which runs fastest.
 
@@ -285,9 +269,7 @@ Now that we can create a very basic image from a Dockerfile, the next step is to
 
 ![image](https://github.com/user-attachments/assets/41c4dc36-7782-41ac-a7dd-326171864601)
 
-## Exercise
-
-Building your first image
+## Exercise: Building your first image
 
 Let's build your first image! We've created a Dockerfile for you, and you can see it in your current working directory using the ls command. You can look at its content using cat Dockerfile or using nano.
 
@@ -302,9 +284,7 @@ Let's build your first image! We've created a Dockerfile for you, and you can se
 
 ![image](https://github.com/user-attachments/assets/c5948e2f-d218-4ed1-864f-5c21474d223b)
 
-## Exercise
-
-Working in the command-line
+## Exercise: Working in the command-line
 
 A Dockerfile is just a textfile and creating or editing it can be done using any text editor. However since the default way to work with Docker is through the Command Line Interface, it's convenient to also edit Dockerfiles using the command line. Let's refresh our memory on how to navigate the file system and create or edit a Dockerfile with the command line.
 
@@ -337,12 +317,10 @@ A Dockerfile is just a textfile and creating or editing it can be done using any
 ```bash
 $ cat Dockerfile
 FROM ubuntu
-RUN apt-ger update
+RUN apt-get update
 ```
 
-## Exercise
-
-Editing a Dockerfile
+## Exercise: Editing a Dockerfile
 
 Let's get familiar with the RUN instruction. We've created a Dockerfile for you. You can look at its content using cat Dockerfile or using nano. Like before, the Dockerfile already has a FROM instruction, but you'll be adding a RUN command this time.
 
@@ -353,9 +331,7 @@ Let's get familiar with the RUN instruction. We've created a Dockerfile for you.
 
 ![image](https://github.com/user-attachments/assets/fd7e4741-632f-4efd-9a06-6e35d3b13ad7)
 
-## Exercise
-
-Creating your own Dockerfile
+## Exercise: Creating your own Dockerfile
 
 While it's possible to download images for many use cases, an image might not always meet your exact needs. In that case, you can create a new image based on an existing one that closely matches your requirements. Let's go through the steps to create a Dockerfile from scratch, build on top of an existing Ubuntu image, add your instructions, and then build it into a new image.
 
@@ -391,9 +367,7 @@ Any instruction in a Dockerfile that downloads files will add to the size of the
 
 ![image](https://github.com/user-attachments/assets/acec1940-6bdc-4bea-94a9-d89ec3722645)
 
-## Exercise
-
-Copying files into an image
+## Exercise: Copying files into an image
 
 You've created an Ubuntu and python3-based image to run your data pipeline. Update your Dockerfile so your image includes the pipeline.py file in which you defined the pipeline.
 
@@ -403,3 +377,48 @@ You've created an Ubuntu and python3-based image to run your data pipeline. Upda
 
 ![image](https://github.com/user-attachments/assets/4e5888ae-430d-488e-ac4a-0a18ca7fc791)
 
+
+## Exercise: Copying folders
+
+After creating an ubuntu and python3 image with your pipeline python code in it, you realize you actually need your entire pipeline_v3 project in the Docker image to be able to install its dependencies. There is a Dockerfile in the current working directory to start from that already has python3 installed.
+
+    Add the instruction to copy all pipeline_v3 project files into the /app directory in your Docker image. You can find the files in the /pipeline_v3/ directory, which is in the current working directory on your local machine.
+    Using the terminal, run the command to build an image called pipeline_v3 from the Dockerfile in your current working directory.
+
+## Solution
+
+```bash
+$ cat Dockerfile
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get -y install python3
+COPY /home/repl/pipeline_v3/ /app
+```
+
+## Exercise: Working with downloaded files
+
+Your previous image worked, and you were able to finalize your pipeline python code! You can now create the next version of your image. Let's create a Dockerfile from scratch, add instructions and then build it.
+
+    Create a file called Dockerfile in the current working directory.
+
+    Add the first instruction to the Dockerfile so that it will build on top of the ubuntu image.
+    Add instructions to the Dockerfile so that it runs apt-get update and apt-get install -y python3 curl unzip.
+
+    Add instructions to the Dockerfile to:
+    Download the zip file from https://assets.datacamp.com/production/repositories/6082/datasets/31a5052c6a5424cbb8d939a7a6eff9311957e7d0/pipeline_final.zip to /pipeline_final.zip.
+    Unzip the file
+    And remove the zip
+    You can use three separate instructions or make it a single instruction to keep your image smaller.
+
+    Using the terminal, run the command to build an image called pipeline from the Dockerfile in your current working directory.
+
+## Solution
+
+```bash
+$ cat Dockerfile
+FROM ubuntu
+RUN apt-get update && apt-get -y install -y python3 curl unzip
+RUN curl https://assets.datacamp.com/production/repositories/6082/datasets/31a5052c6a5424cbb8d939a7a6eff9311957e7d0/pipeline_final.zip -o /pipeline_final.zip
+RUN unzip /pipeline_final.zip
+RUN rm /pipeline_final.zip
+```
