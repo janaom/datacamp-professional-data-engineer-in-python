@@ -391,5 +391,15 @@ Any instruction in a Dockerfile that downloads files will add to the size of the
 
 ![image](https://github.com/user-attachments/assets/acec1940-6bdc-4bea-94a9-d89ec3722645)
 
+## Exercise
 
+Copying files into an image
+
+You've created an Ubuntu and python3-based image to run your data pipeline. Update your Dockerfile so your image includes the pipeline.py file in which you defined the pipeline.
+
+    To the end of the Dockerfile, add the Docker instruction, which copies the pipeline.py file in your current working directory (/home/repl) to the /app folder in the image you want to build.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/4e5888ae-430d-488e-ac4a-0a18ca7fc791)
 
