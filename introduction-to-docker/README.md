@@ -485,3 +485,10 @@ CMD python3
 ```
 
 ![image](https://github.com/user-attachments/assets/e573f639-3092-4428-97b7-37e28bc791e4)
+
+# Creating Secure Docker Images
+
+In this final chapter, you’ll focus on making your Dockerfiles configurable and secure. You'll learn how to make your Dockerfiles configurable using the ARG and ENV instructions. You’ll see why changing the user in your images makes them more secure and how to use the USER Dockerfile instruction to do so. To wrap things up, you’ll learn about some essential security best practices when creating Docker Images.
+
+-----------------
+
