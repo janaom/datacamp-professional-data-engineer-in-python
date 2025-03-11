@@ -439,3 +439,49 @@ While the CMD instruction sets a default start command for the image, this defau
 
 ![image](https://github.com/user-attachments/assets/29d01656-7c77-464a-b328-cef0b4521ef2)
 
+
+## Exercise: Overriding the default command
+
+Overriding the start command of an image has many uses. One of them is testing or debugging something in an image that already has a start command with a specific use case. For example, the postgres image starts a database if you start it normally. To be able to dive into the image and look at configuration files or debug an issue you're having; you can start it with the bash command, an often available shell. What is the command to start the postgres image interactively with a bash shell?
+
+## Solution
+
+```bash
+docker run -it postgres bash
+
+## bash: This is the command to execute inside the newly created container. It starts a bash shell, providing you with a command-line interface within the container.
+```
+
+## Exercise: Pulling a specific tag
+
+You were helping a colleague by looking at an issue they were having with installing some of their tools on the ubuntu image. You couldn't reproduce the issues so far, and just realized you might be trying on a different version of Ubuntu.
+
+    Using the terminal, enter the command to see all images available on your machine.
+
+    Seems like you are not using the same version as your colleague, who is using the 22.04 tag of ubuntu. Pull the right version, 22.04, of the ubuntu image.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/c7c93c4d-94a8-4119-a52f-7c57b084c374)
+
+## Exercise: Adding a CMD
+
+While creating an image for your python pipeline, you had many issues debugging any problems that came up. To be able to debug these easily, you decide to make an image based on the same version of ubuntu that starts python3 by default.
+
+    Add the instruction so that your Docker image starts python3 by default.
+
+    Using the terminal, run the command to build an image called pipeline_debug from the Dockerfile in your current working directory.
+
+    Let's test the image we just made. Using the terminal, enter the command to run the pipeline_debug image.
+
+## Solution
+
+```bash
+$ cat Dockerfile
+FROM ubuntu:22.04
+RUN apt-get update 
+RUN apt-get -y install -y python3 
+CMD python3
+```
+
+![image](https://github.com/user-attachments/assets/e573f639-3092-4428-97b7-37e28bc791e4)
