@@ -550,6 +550,23 @@ Typical use cases for the ARG instruction are to define a version we need in mul
 
 ![image](https://github.com/user-attachments/assets/4d574f90-278d-46ce-9375-5f6ef84a8e1b)
 
+The ARG instruction can also be set in the docker build command, giving us even more flexibility. At the top of the slide, you see the same example Dockerfiles as on the previous slide. By using the build dash arg flag when running 'docker build', we can set another value for the project-folder variable, which overrides the original value during that build. 
+
+![image](https://github.com/user-attachments/assets/25b5c962-dba3-408a-acd6-0dc78ae149fa)
 
 
+The second way to define variables in Dockerfiles is by using the ENV instruction. The syntax is identical to the ARG instruction, but unlike the ARG instruction, variables set with ENV are still accessible after the image is built. While variables set with ARG are used to change the behavior of Dockerfiles during the build, variables set with ENV are used to change behavior at runtime. 
 
+![image](https://github.com/user-attachments/assets/ab808b2f-ded4-4a81-b82e-d8a4d46c9c4d)
+
+Typical use cases are setting variables used by applications when they are starting, like database directories or users - or setting an application to production or development mode. Unlike ARG variables, it is not possible to override ENV variables at build time. However, it is possible to override ENV variables when starting a container from an image. This can be done using the dash env parameter of the docker run command. For example, in the official postgres image, there are several ENV variables available to configure the container.
+
+    1 https://hub.docker.com/_/postgres
+
+![image](https://github.com/user-attachments/assets/9b808a15-8b28-452c-9cda-935cca116842)
+
+Both ENV and ARG variables seem convenient for adding passwords or other secrets to a docker image at build or runtime. However, both are not secure to use for secrets. Anyone can look at variables defined in a Dockerfile after the image is built with the docker history command. This command shows all the steps that were done to build an image. If, instead, we pass variables at build or start time, they can be found in the bash history of the host or image. The bash history is a list of all shell commands executed by a user. Keep in mind that if we use secrets to create our image without using more advanced techniques to hide them, they will be shared with anybody we share the image with. 
+
+![image](https://github.com/user-attachments/assets/1a8ab851-3e85-4bed-b1fd-f1c7f421f050)
+
+![image](https://github.com/user-attachments/assets/324c416b-538a-4d8f-ac50-02815563e82f)
