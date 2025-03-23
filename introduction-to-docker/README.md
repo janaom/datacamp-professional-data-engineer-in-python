@@ -539,3 +539,17 @@ Putting the finishing touches to your pipeline Docker image, you want to make it
 ## Solution
 
 ![image](https://github.com/user-attachments/assets/ef1c3cf5-1490-4a83-ae9a-154ffce761d7)
+
+Using variables in our Dockerfiles allows us to make them less verbose, safer to change, and easier to update. Let's see how that's done. 
+
+First, we will look at the ARG instruction. The ARG instruction allows us to set variables inside a Dockerfile and then use that variable throughout the Dockerfile. It is followed by a space then the name of the variable we want to create, an equal sign and the value of the variable. Later commands can then reference this variable using a dollar sign followed by the variable name. However, it can only be used in the Dockerfile, the variable won't be accessible after the image is built. In other words, if you define a variable with ARG in a Dockerfile, build an image from that Dockerfile, and then start a container from that image, that variable will not exist inside the container. 
+
+![image](https://github.com/user-attachments/assets/96581302-3bfe-4d17-a4bf-c4f8a6e2aab5)
+
+Typical use cases for the ARG instruction are to define a version we need in multiple places throughout the Dockerfile. Like in the first example on the slide, we specify a version of Python called bionic compiled for Ubuntu. Defining a path to a project or user directory is also helpful as an ARG. This allows us to make any instructions using this path less verbose and makes it more apparent at a glance that all files are going to the same folder. 
+
+![image](https://github.com/user-attachments/assets/4d574f90-278d-46ce-9375-5f6ef84a8e1b)
+
+
+
+
