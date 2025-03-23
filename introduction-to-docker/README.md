@@ -638,4 +638,37 @@ The ARG Dockerfile instruction allows us to set a variable in a Dockerfile and t
 
 The Dockerfile adds an ARG named WELCOME_TEXT, which is then printed during the build. The same text is printed when a container is started from the image.
 
+    Using the terminal, enter the command to build the Dockerfile and set the WELCOME_TEXT variable to Welcome!.
+
+## Solution
+
+```python
+docker build --build-arg WELCOME_TEXT="Welcome!" .
+```
+
+## Exercise: Changing behavior when starting a container
+
+Let's see how the ENV Dockerfile instruction works in practice. We've added a Dockerfile to your current working directory with the following instructions:
+
+```python
+FROM ubuntu:22.04
+ENV NAME=Tim
+CMD echo "Hello, my name is $NAME"
+```
+
+The Dockerfile will print a personalized message, Hello, my name is Tim, on startup. Let's see how we can change this personalized message even after building an image from the Dockerfile.
+
+    Before we can start a container, we need to build the image from the Dockerfile. Build the Dockerfile in your local working directory giving it the name hello_image.
+
+    Now that we've built the image, we can start a container from it. Start a container from the hello_image image you just made, but use a flag on the command to set the NAME ENV variable to your name.
+
+## Solution
+
+```bash
+docker build -t hello_image .
+docker run -e NAME="Jana" hello_image
+```
+
+![image](https://github.com/user-attachments/assets/387f90dc-76fd-4873-affd-4bbb766fdcd3)
+
 
