@@ -570,3 +570,72 @@ Both ENV and ARG variables seem convenient for adding passwords or other secrets
 ![image](https://github.com/user-attachments/assets/1a8ab851-3e85-4bed-b1fd-f1c7f421f050)
 
 ![image](https://github.com/user-attachments/assets/324c416b-538a-4d8f-ac50-02815563e82f)
+
+![image](https://github.com/user-attachments/assets/3ae312e1-bda5-43de-b962-d542c719cd9b)
+
+Both ENV and ARG are used to set variables within a Dockerfile, but they serve different purposes and have distinct lifecycles:
+
+ARG variables:
+
+    Purpose: ARG variables are primarily intended for build-time use. They are passed to the docker build command and are available only during the build process. They are not persisted into the resulting image. Think of them as temporary placeholders for values you need during the image creation.
+
+    Lifecycle: They exist only during the build process. Once the image is built, they are gone. They cannot be accessed or modified after the image is created.
+
+    Usage: You define them using ARG <variable_name>=<default_value>, and you pass values to them at build time using the --build-arg flag with docker build. If you don't provide a value during the build, the default value (if specified) is used.
+
+    Example:
+
+```python
+ARG MY_VERSION=1.0
+FROM ubuntu:latest
+RUN echo "My version is $MY_VERSION" > /version.txt
+```
+
+To build this with a different version:
+
+```bash
+docker build --build-arg MY_VERSION=2.0 -t my-image .
+```
+
+ENV variables:
+
+    Purpose: ENV variables are set within the image itself. They are persisted into the image and are available to any processes running inside the container. They are essentially environment variables for the container's runtime environment.
+
+    Lifecycle: They exist throughout the container's lifetime. They are set during the image build and are available to any commands or processes that run within the container created from that image.
+
+    Usage: You define them using ENV <variable_name>=<value>. The value can be a literal string, or it can reference another ENV or ARG variable (but not the other way around; ARG cannot reference ENV).
+
+    Example:
+
+```python
+ENV MY_APP_PORT=8080
+ENV MY_DATABASE_URL=localhost:5432
+CMD ["/my-app", "-p", "$MY_APP_PORT", "-d", "$MY_DATABASE_URL"]
+```
+
+In this example, MY_APP_PORT and MY_DATABASE_URL are available to the /my-app command.
+
+Key Differences Summarized:
+
+![image](https://github.com/user-attachments/assets/e7d91243-55f0-4c4e-a3d6-8c3ba812cb65)
+
+When to use which:
+
+    Use ARG for build-time parameters that don't need to be available at runtime, such as version numbers, build timestamps, or configuration options specific to the build process.
+
+    Use ENV for runtime environment variables that need to be accessible to processes running inside the container, such as database connection strings, API keys, or port numbers.
+
+In essence, ARG variables are temporary placeholders during the build, while ENV variables are permanent environment variables for the container. They can be used together; you might use ARG to set a value that's then used to set an ENV variable.
+
+## Exercise: Overriding ARG in a build
+
+The ARG Dockerfile instruction allows us to set a variable in a Dockerfile and then optionally override it when building an image. We've added a Dockerfile to your current working directory with the following instructions:
+
+    FROM ubuntu
+    ARG WELCOME_TEXT=Hello!
+    RUN echo $WELCOME_TEXT
+    CMD echo $WELCOME_TEXT
+
+The Dockerfile adds an ARG named WELCOME_TEXT, which is then printed during the build. The same text is printed when a container is started from the image.
+
+
