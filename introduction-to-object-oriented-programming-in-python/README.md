@@ -4,7 +4,7 @@ Embark on a journey into the heart of Python programming with our comprehensive 
 
 --------------
 
-OOP Fundamentals
+[OOP Fundamentals](https://github.com/janaom/datacamp-professional-data-engineer-in-python/blob/main/introduction-to-object-oriented-programming-in-python/README.md#oop-fundamentals)
 
 Inheritance and Polymorphism
 
