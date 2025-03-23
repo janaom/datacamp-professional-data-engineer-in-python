@@ -2,7 +2,7 @@
 
 Dive deep into advanced skills and state-of-the-art tools revolutionizing data engineering roles today with DataCamp Professional Data Engineer track.
 
-📌 Learning is in progress, for now working on Docker course
+📌 Learning is in progress, for now working on Introduction to Object-Oriented Programming in Python course
 
 --------------------------
 
