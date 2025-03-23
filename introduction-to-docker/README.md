@@ -492,3 +492,6 @@ In this final chapter, you’ll focus on making your Dockerfiles configurable an
 
 -----------------
 
+When building a Dockerfile that we have built before, in front of each layer being built, it says cached in capital letters. Docker detects which Dockerfile instructions have not changed, and instead of re-running the Dockerfile instruction, it uses the known result it has stored. Docker will only use cached layers to speed up our builds if the Dockerfile instruction is exactly the same and all previous Dockerfile instructions are also identical to when it originally created and stored this layer. 
+
+![image](https://github.com/user-attachments/assets/4e40bbb5-54e3-47da-8df2-2b2ca20cfbf8)
