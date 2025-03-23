@@ -671,4 +671,43 @@ docker run -e NAME="Jana" hello_image
 
 ![image](https://github.com/user-attachments/assets/387f90dc-76fd-4873-affd-4bbb766fdcd3)
 
+All previous measures are of little use if we allow anybody who gets access to a container to install anything they want. The solution is not to leave the user in our images as root. Often it is needed to install and configure applications as root; after that, the user in our image should be changed to a user with fewer permissions. If, for example, we change the user before the CMD instruction that starts our pipeline, we ensure that any malicious code in the pipeline does not have root access in our container. 
+
+![image](https://github.com/user-attachments/assets/0032c2f0-f9df-4079-9427-b9d30f0e9457)
+
+## Exercise: Keeping packages up-to-date
+
+Keeping Docker images up-to-date makes them more secure because applications might have released security updates since the image was released. This means even when using an image from a trusted source, we should update all the software on the image before using it in a production environment.
+
+Exactly how you can update all software on an image depends on the image and its operating system. Let's learn how to update all packages on Ubuntu using the apt-get package.
+
+    First, start a container from the ubuntu image while setting the correct flag to get an interactive session in the container.
+    In the Ubuntu container, run apt-get update to make the apt-get package manager check if any updates are available for any packages.
+    Run apt-get upgrade to upgrade all installed packages.
+
+Before confirming the upgrade, you'll be able to see the various reasons the package will be changed. What are the reasons?
+
+## Solution
+
+upgraded, newly installed, to remove, and not upgraded.
+
+## Exercise: Be safe, don't use root
+
+Not giving access to the root user in your images makes images more foolproof, as users only have access to what's relevant to the use case you intended for the image. Additionally, it is one of the best options to increase their security. We've built an image for you from the following Dockerfile, which tries to install python3 as soon as you start it.
+
+```python
+FROM ubuntu
+RUN useradd -m repl
+USER repl
+CMD apt-get install python3
+```
+
+Let's see what happens if we try to install python3 at startup as the repl user.
+
+    Use docker to run the repl_try_install image.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/8ddb6524-ef42-4f4b-abb3-72f5a37e107f)
+
 
