@@ -520,7 +520,22 @@ The USER instruction changes the user with which the following instructions in t
 
 ![image](https://github.com/user-attachments/assets/312722a6-300b-482c-b2a5-9250c2b9a968)
 
+## Exercise: Setting the user
 
+You've finished the python code for the pipeline you were building and have gotten all the feedback you need from colleagues. To make your pipeline Docker image more foolproof, you want to set the user to repl before the project files are copied into the image. We've already added the RUN instruction to create a repl user for you.
 
+    Using the terminal, open the Dockerfile in your current working directory and edit the third line to set the user to repl.
 
+## Solution
 
+![image](https://github.com/user-attachments/assets/b52fcf70-70b7-4764-b4dd-4914821c0d53)
+
+## Exercise: Setting the working directory
+
+Putting the finishing touches to your pipeline Docker image, you want to make it clear that all pipeline project files in your images will be in the repl users' home directory by setting the working directory to /home/repl.
+
+    Using the terminal, open the Dockerfile in your current working directory and edit the fourth line to make all next instructions run in /home/repl.
+
+## Solution
+
+![image](https://github.com/user-attachments/assets/ef1c3cf5-1490-4a83-ae9a-154ffce761d7)
