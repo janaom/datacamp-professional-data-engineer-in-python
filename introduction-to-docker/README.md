@@ -495,3 +495,32 @@ In this final chapter, you’ll focus on making your Dockerfiles configurable an
 When building a Dockerfile that we have built before, in front of each layer being built, it says cached in capital letters. Docker detects which Dockerfile instructions have not changed, and instead of re-running the Dockerfile instruction, it uses the known result it has stored. Docker will only use cached layers to speed up our builds if the Dockerfile instruction is exactly the same and all previous Dockerfile instructions are also identical to when it originally created and stored this layer. 
 
 ![image](https://github.com/user-attachments/assets/4e40bbb5-54e3-47da-8df2-2b2ca20cfbf8)
+
+![image](https://github.com/user-attachments/assets/6359923d-5589-461d-af90-4ae19f23d84f)
+
+The FROM, RUN, and COPY instructions only affect the file system, not each other. If we copy a start dot sh file from our local file system into an image, we can then use the RUN instruction to execute this file. The two instructions didn't change each other's behavior directly, but both used and changed the file system. However, some instructions can influence other instructions directly. The WORKIDR instruction changes the working directory instructions are executed in, and the USER instruction changes which user is executing the following instructions. 
+
+![image](https://github.com/user-attachments/assets/30c896c3-a52f-4298-bbae-af586d1eaa52)
+
+When using a Dockerfile instruction where we have to specify a path, we can always use a full path. For example, a path that starts at the root of the file system, like in the first example on the slide. When working with long paths, this can quickly become hard to read. The alternative to using full paths is the WORKDIR instruction, which allows us to change the directory inside the image from which all subsequent instructions will be executed. For the COPY instruction, we change the current path on which relative paths will be based. 
+
+![image](https://github.com/user-attachments/assets/0f14a8f3-73db-4841-bdfb-57321d1d7fd8)
+
+The WORKDIR instruction also changes the working directory in which the shell command of the CMD instruction is run. If a user of the image overrides the CMD, their replacement start command will also be run in the path set with WORKDIR. 
+
+![image](https://github.com/user-attachments/assets/1b5f51f4-a861-4760-8c47-5e3dcf41652b)
+
+When writing Dockerfiles, we should follow this best practice and not run everything as root. The image we start our Dockerfile from will determine the user. For example, the ubuntu image uses the root user by default. Any RUN instructions we put in a Dockerfile starting from ubuntu will be run as root. This has the advantage that all folders are accessible, and we won't get errors about permissions when installing anything. However, it is unsafe as all instructions will run with full permissions. The USER Dockerfile instruction allow us to change the user in the image. Any following instructions will be run as the user set by the USER instruction. It can be used multiple times, and the latest instruction will determine the user executing the following instructions. 
+
+![image](https://github.com/user-attachments/assets/a2213a7c-57f6-44ba-8b43-40e9f2cb5d4f)
+
+The USER instruction changes the user with which the following instructions in the image are run. The last USER instruction in a Dockerfile will also control the user in any containers started from the image of this Dockerfile. 
+
+![image](https://github.com/user-attachments/assets/40070d9d-c98b-4b8a-9644-1eb71df9328b)
+
+![image](https://github.com/user-attachments/assets/312722a6-300b-482c-b2a5-9250c2b9a968)
+
+
+
+
+
